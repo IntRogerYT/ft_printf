@@ -2,7 +2,7 @@
 
 ## **Descripción**
 Este proyecto se basa en replicar la funcion *printf* en lenguaje C. La funcion *printf* se usa para mostrar texto en la consola.
-Tambien puedes imprimir variables, siempre indicando el tipo de elemento a imprimir (character, string, integer...) y pasando como argumento, la variable cuyo valor queremos mostrar. Toda la informacion especifica del proyecto esta en el subject[1].
+Tambien puedes imprimir variables, siempre indicando el tipo de elemento a imprimir (character, string, integer...) y pasando como argumento, la variable cuyo valor queremos mostrar. Toda la informacion especifica del proyecto esta en el [subject](https://cdn.intra.42.fr/pdf/pdf/189865/es.subject.pdf).
 
 ## **Instrucciones**
 Para ejecutar el proyecto sigue los siguientes pasos.
@@ -50,8 +50,6 @@ Texto mostrado con mi printf
 ```
 
 ## **Recursos**
-
-[1]: https://cdn.intra.42.fr/pdf/pdf/189865/es.subject.pdf
 
 [Informacion sobre la funcion printf](https://www.ibm.com/docs/es/i/7.5.0?topic=functions-printf-print-formatted-characters)
 
