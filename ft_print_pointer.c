@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/09 13:56:55 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/12/15 11:59:13 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/12/15 12:56:46 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_putchar(char c)
+static char	*ft_itoa_hex(unsigned long long adress)
 {
-	write(1, &c, 1);
+	char	*str;
+
+	if (!adress)
+		return (NULL);
 }
 
-void	*ft_putstr(char *s)
+int	ft_print_pointer(void *ptr)
 {
-	while (*s)
-		write(1, &s++, 1);
+	char				*str;
+	int					str_len;
+	unsigned long long	adress;
+
+	if (!ptr)
+		return (write(1, "(nil)", 5));
+	adress = (unsigned long long)ptr;
+	str = ft_itoa_hex(adress);
+	if (!str)
+		return (-1);
+	write(1, "0x", 2);
+	str_len = ft_print_str(str);
+	free(str);
+	return (2 + str_len);
 }

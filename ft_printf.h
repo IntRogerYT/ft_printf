@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:07:01 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/09 13:48:45 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:48:04 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,13 @@
 /********************************/
 /*          FUNCTIONS           */
 /********************************/
+// FT_PRINTF.C
 int			ft_printf(char const *format, ...);
 static int	ft_iterate_args(char const *format, va_list args);
-static char ft_check_format(char const chr, va_list args);
+static char	ft_check_format(char const chr, va_list args);
+// FT_PRINT_CHAR_STR.C
+int			ft_print_char(int c);
+int			ft_print_str(char *str);
+// FT_PRINT_POINTER.C
+int			ft_print_pointer(void *ptr);
 #endif
