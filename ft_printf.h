@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:07:01 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/15 12:48:04 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:58:12 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ int			ft_print_char(int c);
 int			ft_print_str(char *str);
 // FT_PRINT_POINTER.C
 int			ft_print_pointer(void *ptr);
+char		*ft_uint_to_hex(unsigned long long adress);
 #endif

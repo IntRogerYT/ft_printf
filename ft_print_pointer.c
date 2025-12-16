@@ -6,34 +6,35 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 11:59:13 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/16 09:16:42 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:29:35 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	*ft_itoa_hex(unsigned long long adress)
+#include "ft_printf.h"
+
+char	*ft_uint_to_hex(unsigned long long num)
 {
-	char	str[ft_strlen((char *)adress) + 1];
+	char	*res;
+	char	*hex_table;
+	int		remainder;
+	int		i;
 
-	if (!adress)
+	if (!num)
 		return (NULL);
-	str = malloc(sizeof(adress));
-	if (!str)
-		return (NULL)
-	while (*adress)
+	hex_table = "0123456789ABCDEF";
+	res = malloc(3 * sizeof(char));
+	while (num > 16)
 	{
-		if (*adress >= 48 && *adress <= 57)
-			*str = *adress + '0';
-		else if (*adress >= 'a' && *adress <= 'f')
-			*str = *adress - 'a' + 10;
-		else
-			return (NULL);
-		adress++;
-		str++;
+		remainder = num % 16;
+		res[i] = hex_table[remainder];
+		num /= 16;
+		i++;
 	}
-	*str = '\0';
-	return (str);
+	res[i] = hex_table[remainder];
+	res[++i] = '\0';
+	return (res);
 }
-
+/*
 int	ft_print_pointer(void *ptr)
 {
 	char				*str;
@@ -50,4 +51,4 @@ int	ft_print_pointer(void *ptr)
 	str_len = ft_print_str(str);
 	free(str);
 	return (2 + str_len);
-}
+}*/

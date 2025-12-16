@@ -31,9 +31,10 @@ Ejemplo de funcion main para imprimir una variable tipo *string*:
 
 int	main(void)
 {
-	char	*text = "Texto mostrado con mi printf";
+	char	*text = "Mundo";
 
-	ft_printf("%s\n", text);
+	ft_printf("Hola %s!\n", text); //Salida: "Hola Mundo!"
+	printf("Hola %s!\n", text); //Para comparar mi printf con el original
 	return (0);
 }
 ```
