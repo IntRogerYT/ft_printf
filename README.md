@@ -33,7 +33,7 @@ int	main(void)
 {
 	char	*text = "Mundo";
 
-	ft_printf("Hola %s!\n", text); //Salida: "Hola Mundo!"
+	ft_printf("Hola %s!\n", text);
 	printf("Hola %s!\n", text); //Para comparar mi printf con el original
 	return (0);
 }
@@ -48,7 +48,7 @@ $ ./run
 ```
 Salida del ejemplo:
 ```bash
-Texto mostrado con mi printf
+Hola Mundo!
 ```
 
 ## **Recursos**
