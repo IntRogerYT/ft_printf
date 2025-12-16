@@ -6,16 +6,32 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 11:59:13 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/15 12:56:46 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:16:42 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 static char	*ft_itoa_hex(unsigned long long adress)
 {
-	char	*str;
+	char	str[ft_strlen((char *)adress) + 1];
 
 	if (!adress)
 		return (NULL);
+	str = malloc(sizeof(adress));
+	if (!str)
+		return (NULL)
+	while (*adress)
+	{
+		if (*adress >= 48 && *adress <= 57)
+			*str = *adress + '0';
+		else if (*adress >= 'a' && *adress <= 'f')
+			*str = *adress - 'a' + 10;
+		else
+			return (NULL);
+		adress++;
+		str++;
+	}
+	*str = '\0';
+	return (str);
 }
 
 int	ft_print_pointer(void *ptr)
