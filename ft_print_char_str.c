@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/15 12:47:15 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:11:08 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int	ft_print_str(char *str)
 	if (!str)
 		return (-1);
 	len = 0;
-	while (*str++)
+	while (*str)
 	{
-		ft_putchar(*str);
+		ft_print_char(*str);
 		len++;
+		str++;
 	}
 	return (len);
 }

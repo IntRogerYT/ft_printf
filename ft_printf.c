@@ -6,27 +6,30 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:58:17 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/16 11:12:56 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:53:20 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	ft_check_format(char const chr, va_list args)
+int	ft_check_format(char const chr, va_list args)
 {
-	int	check;
 
 	if (!chr)
 		return (-1);
 	else if (chr == 'c')
-		return ((check = ft_print_char(va_arg(args, char))));
+		return (ft_print_char(va_arg(args, int)));
 	else if (chr == 's')
 		return (ft_print_str(va_arg(args, char *)));
 	else if (chr == 'p')
 		return (ft_print_pointer(va_arg(args, void *)));
+	else if (chr == 'd' || chr == 'i')
+		return (ft_print_int_decimal(va_arg(args, int)));
+	else
+		return (0);
 }
 
-static int	ft_iterate_args(char const *format, va_list args)
+int	ft_iterate_args(char const *format, va_list args)
 {
 	int	len;
 
