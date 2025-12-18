@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char_str.c                                :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:12:26 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/10/08 12:18:31 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/16 15:52:54 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	return (write(1, &c, 1));
-}
+	size_t			i;
+	unsigned char	*dest_data;
+	unsigned char	*src_data;
 
-int	ft_print_str(char *str)
-{
-	if (!str)
-		return (write(1, "(null)", 6));
-	return (write(1, str, ft_strlen(str)));
+	dest_data = (unsigned char *)dest;
+	src_data = (unsigned char *)src;
+	if (dest == NULL && src == NULL)
+		return (dest);
+	i = 0;
+	while (i < n)
+	{
+		dest_data[i] = src_data[i];
+		i++;
+	}
+	return (dest);
 }

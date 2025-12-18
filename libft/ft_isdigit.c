@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char_str.c                                :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:12:26 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/10/03 15:48:47 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/06 15:05:25 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(int c)
+int	ft_isdigit(int c)
 {
-	return (write(1, &c, 1));
-}
-
-int	ft_print_str(char *str)
-{
-	if (!str)
-		return (write(1, "(null)", 6));
-	return (write(1, str, ft_strlen(str)));
+	if (c >= 48 && c <= 57)
+		return (c);
+	return (0);
 }

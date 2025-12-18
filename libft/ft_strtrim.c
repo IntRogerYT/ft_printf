@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char_str.c                                :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:12:26 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/10/22 15:16:53 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/23 12:01:19 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	return (write(1, &c, 1));
-}
+	int		i;
+	int		j;
+	int		start;
+	char	*newstr;
 
-int	ft_print_str(char *str)
-{
-	if (!str)
-		return (write(1, "(null)", 6));
-	return (write(1, str, ft_strlen(str)));
+	j = ft_strlen(s1);
+	i = 0;
+	while (ft_strchr(set, s1[i]) != NULL && s1[i] != '\0')
+		i++;
+	start = i;
+	while (ft_strrchr(set, s1[j]) != NULL && j >= i)
+		j--;
+	newstr = ft_substr(s1, start, (j - start) + 1);
+	if (!newstr)
+		return (NULL);
+	return (newstr);
 }

@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 11:59:13 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/17 11:23:48 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:17:44 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_hex_len(unsigned long long num)
 
 	temp = num;
 	len = 0;
-	while(temp > 0)
+	while (temp > 0)
 	{
 		temp /= 16;
 		len++;

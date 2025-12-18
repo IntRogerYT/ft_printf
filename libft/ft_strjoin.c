@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char_str.c                                :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 10:35:05 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:12:26 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/10/22 11:31:22 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/22 15:15:39 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	return (write(1, &c, 1));
-}
+	char	*newstr;
+	int		size;
 
-int	ft_print_str(char *str)
-{
-	if (!str)
-		return (write(1, "(null)", 6));
-	return (write(1, str, ft_strlen(str)));
+	size = ft_strlen(s1) + ft_strlen(s2);
+	newstr = malloc(size + 1);
+	if (!newstr)
+		return (NULL);
+	ft_strlcpy(newstr, s1, ft_strlen(s1) + 1);
+	ft_strlcat(newstr, s2, size + 1);
+	return (newstr);
 }

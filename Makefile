@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_print_char_str.c ft_print_pointer.c ft_print_number.c
+SRC = ft_printf.c ft_print_char_str.c ft_print_pointer.c ft_print_number.c ft_print_unsigned.c ft_print_hex.c
 
 LIBFT_DIR = libft
 LIBFT_NAME = libft.a

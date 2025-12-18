@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:58:17 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/17 13:53:20 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:17:12 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_check_format(char const chr, va_list args)
 {
-
 	if (!chr)
 		return (-1);
 	else if (chr == 'c')
@@ -25,8 +24,14 @@ int	ft_check_format(char const chr, va_list args)
 		return (ft_print_pointer(va_arg(args, void *)));
 	else if (chr == 'd' || chr == 'i')
 		return (ft_print_int_decimal(va_arg(args, int)));
+	else if (chr == 'u')
+		return (ft_print_unsigned_int(va_arg(args, int)));
+	else if (chr == 'x')
+		return (ft_print_hex(va_arg(args, int)));
+	else if (chr == 'X')
+		return (ft_print_upper_hex(va_arg(args, int)));
 	else
-		return (0);
+		return (ft_print_char('%'));
 }
 
 int	ft_iterate_args(char const *format, va_list args)
