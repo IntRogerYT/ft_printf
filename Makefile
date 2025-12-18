@@ -26,6 +26,9 @@ $(NAME): $(OBJS)
 %.o:%.c $(HEADERS) Makefile
 	cc $(FLAGS) -c $< -o $@
 
+fs: $(LIBFT_OBJS) $(OBJS)
+	$(CC) $(FLAGS) -g main.c $(LIBFT_OBJS) $(OBJS)
+
 clean:
 	rm -f $(OBJS) $(DEPS) $(LIBFT_OBJS)
 	make -C $(LIBFT_DIR) clean
