@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 10:55:42 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:15:40 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/19 09:49:16 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa_hexa(unsigned int num)
 	str = (char *)malloc(hex_len * sizeof(char) + 1);
 	if (!str)
 		return (NULL);
-	str[hex_len] = '0';
+	str[hex_len] = '\0';
 	hex_len--;
 	if (nbr == 0)
 		str[0] = '0';

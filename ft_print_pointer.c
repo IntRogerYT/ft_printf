@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 11:59:13 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:17:44 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/19 09:47:26 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa_hex(unsigned long long num)
 
 	if (!num)
 		return (NULL);
-	hex_table = "0123456789ABCDEF";
+	hex_table = "0123456789abcdef";
 	i = ft_hex_len(num);
 	res = malloc(i * sizeof(char) + 1);
 	while (num > 0)
