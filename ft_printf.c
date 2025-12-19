@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:58:17 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/12/18 12:17:12 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:28:56 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_iterate_args(char const *format, va_list args)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				return (-1);
 			if (ft_strchr("cspdiuxX%", *format) == NULL)
 				return (-1);
 			len += ft_check_format(*format, args);
